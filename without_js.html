@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolFinder - Your Research Companion</title>
+    <meta name="description"
+        content="SolFinder Research offers innovative research, development, and consulting services in technology, electronics, and energy solutions." />
+    <meta name="author" content="SolFinder Research" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            padding: 2rem 1.5rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.125rem;
+            color: #dbeafe;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1e3a8a;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-desktop {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        .nav-desktop a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-desktop a:hover {
+            color: #fbbf24;
+        }
+
+        /* Sections */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e40af;
+        }
+
+        .section-divider {
+            width: 6rem;
+            height: 0.25rem;
+            background-color: #fbbf24;
+            margin: 0 auto 2rem;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 1.5rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #dbeafe;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px -5px rgba(30, 64, 175, 0.1);
+            text-align: center;
+            border: 1px solid rgba(30, 64, 175, 0.08);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            footer p {
+                color: #dbeafe;
+                font-size: 0.875rem;
+            }
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p {
+            color: #dbeafe;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SolFinder</h1>
+            <p>Your research companion</p>
+        </div>
+
+        <nav>
+            <div class="nav-container">
+                <div class="nav-desktop">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home -->
+        <section id="home" class="section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h2>Welcome to SolFinder</h2>
+                    <p>We offer innovative research and smart technology solutions that drive the future of
+                        sustainable development.</p>
+                </div>
+            </div>
+            <div class="section-container">
+                <h2>Why Choose SolFinder?</h2>
+                <div class="section-divider"></div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Innovation</h3>
+                        <p>Cutting-edge research and development</p>
+                    </div>
+                    <div class="card">
+                        <h3>Technology</h3>
+                        <p>Advanced solutions for modern challenges</p>
+                    </div>
+                    <div class="card">
+                        <h3>Excellence</h3>
+                        <p>Quality-driven approach to every project</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="section-container">
+                <h2>About Us</h2>
+                <div class="section-divider"></div>
+                <div class="card" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Our Story</h3>
+                    <p>SolFinder Research carries out Research, Development, Testing, Maintenance and Benchmarking of
+                        latest technologies in computer hardware, software, accessories, electronics, telecommunication,
+                        embedded systems, mechatronic systems and energy supplies aiming to provide products and
+                        services which can address requirements of customers and end users in India and abroad.</p>
+                    <p>The company also carries out sale, leasing, stocking, trading, import, export, marketing and
+                        promotion activities for such products and services.</p>
+                    <p>It imparts training, advisory and consultancy services to interested recipients on the knowledge
+                        acquired in pursuit of these activities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="section">
+            <div class="section-container">
+                <h2>Our Services</h2>
+                <div class="section-divider"></div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Research & Development</h3>
+                        <p>Development of technology Products and Solutions to service customized requirements.</p>
+                    </div>
+                    <div class="card">
+                        <h3>IT Enabled Services</h3>
+                        <p>Enabling business to offer their services online to a wider audience in a timebound manner
+                            thereby increasing profitability.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Consulting</h3>
+                        <p>Analysis of business operations and recommendation of technology enabled optimizations for
+                            enhanced profitability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="section-container">
+                <h2>Contact Us</h2>
+                <div class="section-divider"></div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">✉</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:prateekkhanna.solfinder@gmail.com">prateekkhanna.solfinder@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+919886074340">+91 9886074340</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🕒</div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday</p>
+                        <p>9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>SolFinder Research</h3>
+        <p>Your trusted partner for innovative technology solutions</p>
+        <div class="footer-divider">
+            <p> 2025 SolFinder Research.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
